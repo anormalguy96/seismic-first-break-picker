@@ -1,0 +1,51 @@
+{
+  "segment_count": 1086,
+  "baseline": {
+    "mae_ms": 47.6938362121582,
+    "rmse_ms": 96.45833587646484,
+    "acc_2ms": 22.66190976438326,
+    "acc_4ms": 34.17193063836174,
+    "acc_8ms": 48.61044790373412,
+    "valid_trace_count": 146594
+  },
+  "corrected": {
+    "mae_ms": 37.21328353881836,
+    "rmse_ms": 87.02550506591797,
+    "acc_2ms": 36.18565562028459,
+    "acc_4ms": 50.19305019305019,
+    "acc_8ms": 62.33952276355104,
+    "valid_trace_count": 146594
+  },
+  "improvement": {
+    "mae_ms": 10.480552673339844,
+    "rmse_ms": 9.432830810546875,
+    "acc_2ms": 13.523745855901332,
+    "acc_4ms": 16.021119554688454,
+    "acc_8ms": 13.729074859816919
+  },
+  "representative_figures": {
+    "best": "reports\\evaluation\\figures\\best_Halfmile_shot20301149_seg000.png",
+    "median": "reports\\evaluation\\figures\\median_Halfmile_shot20261181_seg001.png",
+    "worst": "reports\\evaluation\\figures\\worst_Halfmile_shot20041590_seg005.png"
+  },
+  "regression_figure": "reports\\evaluation\\figures\\regression_Halfmile_shot20121514_seg024.png",
+  "regression_segment": {
+    "segment_id": "Halfmile_shot20121514_seg024",
+    "asset_name": "Halfmile",
+    "shot_id": 20121514,
+    "segment_num": 24,
+    "trace_count": 101,
+    "valid_trace_count": 96,
+    "baseline_mae_ms": 54.6875,
+    "baseline_rmse_ms": 85.26551667194266,
+    "baseline_acc_2ms": 25.0,
+    "baseline_acc_4ms": 30.208333333333332,
+    "baseline_acc_8ms": 45.83333333333333,
+    "corrected_mae_ms": 64.77083587646484,
+    "corrected_rmse_ms": 90.36753657518095,
+    "corrected_acc_2ms": 2.083333333333333,
+    "corrected_acc_4ms": 6.25,
+    "corrected_acc_8ms": 16.666666666666664,
+    "mae_improvement_ms": -10.083335876464844
+  }
+}
