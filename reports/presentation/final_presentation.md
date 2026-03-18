@@ -150,11 +150,11 @@ I would make it clear here that these are patch-level validation numbers, not th
 - Metrics are computed over `146,594` valid labeled traces.
 - The ML correction stage improves every reported aggregate metric over the refined baseline.
 
-| Method | MAE (ms) | RMSE (ms) | Acc <= 2 ms | Acc <= 4 ms | Acc <= 8 ms |
-| --- | ---: | ---: | ---: | ---: | ---: |
-| Refined baseline | 47.694 | 96.458 | 22.662% | 34.172% | 48.610% |
-| ML corrected | 37.213 | 87.026 | 36.186% | 50.193% | 62.340% |
-| Improvement | 10.481 | 9.433 | +13.524 pts | +16.021 pts | +13.729 pts |
+| Method           | MAE (ms) | RMSE (ms) | Acc <= 2 ms | Acc <= 4 ms | Acc <= 8 ms |
+| ---------------- | -------: | --------: | ----------: | ----------: | ----------: |
+| Refined baseline |   47.694 |    96.458 |     22.662% |     34.172% |     48.610% |
+| ML corrected     |   37.213 |    87.026 |     36.186% |     50.193% |     62.340% |
+| Improvement      |   10.481 |     9.433 | +13.524 pts | +16.021 pts | +13.729 pts |
 
 Table path: `reports/evaluation/test_summary_table.csv`
 
@@ -233,12 +233,19 @@ I would close by emphasizing credibility over flash. The main contribution is no
 
 ```bash
 python scripts/export_segments.py --path data/raw/Halfmile3D_add_geom_sorted.hdf5 --out_dir data/interim/Halfmile_segments --asset_name Halfmile
+
 python scripts/split_segments_train_test.py --segments_dir data/interim/Halfmile_segments --manifest_path data/interim/Halfmile_segments/Halfmile_segments_manifest.json --out_dir data/processed/splits --train_ratio 0.7 --val_ratio 0.1 --seed 42
+
 python scripts/build_ml_dataset.py --segments_dir data/interim/Halfmile_segments --split_json data/processed/splits/train_segments.json --out_npz data/processed/ml_train_dataset.npz
+
 python scripts/build_ml_dataset.py --segments_dir data/interim/Halfmile_segments --split_json data/processed/splits/val_segments.json --out_npz data/processed/ml_val_dataset.npz
+
 python scripts/build_ml_dataset.py --segments_dir data/interim/Halfmile_segments --split_json data/processed/splits/test_segments.json --out_npz data/processed/ml_test_dataset.npz
+
 python scripts/train_ml_correction_model.py --train_npz data/processed/ml_train_dataset.npz --val_npz data/processed/ml_val_dataset.npz --out_model data/processed/ml_correction_model.pkl --out_report data/processed/ml_correction_training_report.json
+
 python scripts/evaluate_ml_correction_model.py --segments_dir data/interim/Halfmile_segments --test_split_json data/processed/splits/test_segments.json --model_pkl data/processed/ml_correction_model.pkl --out_dir reports/evaluation
+
 python -m unittest discover -s tests -v
 ```
 
