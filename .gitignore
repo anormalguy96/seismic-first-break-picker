@@ -25,4 +25,6 @@ Thumbs.db
 *.temp
 data/raw/
 data/interim/
+data/processed/
+*.npz
 notebooks/.ipynb_checkpoints/
