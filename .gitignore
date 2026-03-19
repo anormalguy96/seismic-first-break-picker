@@ -32,11 +32,9 @@ Thumbs.db
 *.temp
 data/raw/
 data/interim/
-data/processed/
 notebooks/.ipynb_checkpoints/
 =======
 data/raw/
 data/interim/
-data/processed/
 notebooks/.ipynb_checkpoints/
 >>>>>>> af6f50ebf15609fb388ac224b5aa783d16f88671
