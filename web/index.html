@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Seismic AI Vision | Model Results</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div id="app">
+      <header class="app-header glass-panel">
+        <div class="logo">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M22 12V20H2V4H10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M16 2L16 10" stroke="var(--accent-lime)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M12 6L20 6" stroke="var(--accent-lime)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <h1>Seismic AI Explorer</h1>
+        </div>
+        <nav class="segment-selector" id="segment-selector">
+          <!-- Populated dynamically -->
+        </nav>
+      </header>
+      
+      <main class="main-content">
+        <aside class="sidebar glass-panel">
+          <div class="panel-section">
+            <h2>Current Segment</h2>
+            <h3 id="segment-id-display">Loading...</h3>
+          </div>
+          
+          <div class="panel-section">
+            <h2>Validation Metrics</h2>
+            <div class="metrics-grid">
+              <div class="metric-card">
+                <span class="metric-label">Baseline MAE</span>
+                <span class="metric-value font-mono" id="metric-baseline">--</span>
+              </div>
+              <div class="metric-card highlight">
+                <span class="metric-label">Corrected MAE</span>
+                <span class="metric-value font-mono" id="metric-corrected">--</span>
+              </div>
+              <div class="metric-card impact">
+                <span class="metric-label">Improvement</span>
+                <span class="metric-value font-mono" id="metric-improvement">--</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="panel-section">
+            <h2>Layers</h2>
+            <ul class="layer-toggles">
+              <li>
+                <label class="toggle-control toggle-manual">
+                  <input type="checkbox" id="toggle-manual" checked>
+                  <span class="control"></span>
+                  <span class="label">Manual Picks (Ground truth)</span>
+                </label>
+              </li>
+              <li>
+                <label class="toggle-control toggle-baseline">
+                  <input type="checkbox" id="toggle-baseline" checked>
+                  <span class="control"></span>
+                  <span class="label">Baseline Heuristic</span>
+                </label>
+              </li>
+              <li>
+                <label class="toggle-control toggle-corrected">
+                  <input type="checkbox" id="toggle-corrected" checked>
+                  <span class="control"></span>
+                  <span class="label">ML Corrected</span>
+                </label>
+              </li>
+            </ul>
+          </div>
+          
+          <div class="panel-section info-section">
+            <p>Hover over the shot viewer to inspect absolute error at a specific trace.</p>
+            <div id="hover-inspector" class="hover-inspector empty">
+              <span class="trace-id">Hover over trace</span>
+            </div>
+          </div>
+        </aside>
+        
+        <section class="viewer-container glass-panel">
+          <div class="viewer-header">
+            <h2>Shot Viewer Panel</h2>
+            <span class="bad-labels-legend">Red traces ignored (invalid labels)</span>
+          </div>
+          <div class="canvas-wrapper" id="canvas-wrapper">
+             <canvas id="seismic-canvas"></canvas>
+             <div class="canvas-loader" id="canvas-loader">Loading AI Output...</div>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

@@ -260,7 +260,7 @@ The repository is organized so that the package code, scripts, reports, tests, a
 | `scripts/` | Command-line entry points for inspection, export, splitting, dataset construction, training, preview, and evaluation |
 | `data/` | Raw input, exported segment artifacts, processed datasets, and saved models |
 | `reports/evaluation/` | Final metric summaries, per-segment tables, and evaluation figures |
-| `reports/presentation/` | Presentation source materials |
+| `presentation/` | Final presentation deck |
 | `notebooks/` | Interactive exploration and result-review notebooks |
 | `tests/` | Lightweight regression tests for core pipeline behavior |
 
@@ -309,6 +309,6 @@ These tests are intentionally lightweight. They do not replace full end-to-end r
 - Unlabeled traces are present in the source data and must always be excluded from metric computation.
 - Historical random-segment evaluations should not be treated as final results; the shot-disjoint held-out evaluation is the authoritative reporting path.
 
-## Licence
+## License
 
-This project is licenced under the [MIT License](LICENSE). See  for details.
+This project is licensed under the [MIT License](LICENSE).

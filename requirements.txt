@@ -3,7 +3,7 @@ scipy
 pandas
 matplotlib
 h5py
-scikit-learn
+scikit-learn==1.7.0
 tqdm
 pyyaml
 jupyter

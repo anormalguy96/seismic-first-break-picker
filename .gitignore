@@ -1,30 +1,47 @@
+# Python cache artifacts
 __pycache__/
+scripts/__pycache__/
+seismic_first_break_picker/__pycache__/
+tests/__pycache__/
+notebooks/__pycache__/
 *.py[cod]
 *$py.class
+
+# Local Python environments
 .venv/
 venv/
 env/
 ENV/
+
+# Local environment/config
 .env
 .env.*
+
+# Notebook and test/tool caches
 .ipynb_checkpoints/
+notebooks/.ipynb_checkpoints/
 .pytest_cache/
 .mypy_cache/
 .ruff_cache/
 .coverage
 .coverage.*
 htmlcov/
+
+# Editor/OS files
 .vscode/
 .idea/
 *.swp
 *.swo
 Thumbs.db
 .DS_Store
+
+# Temporary files
 *.log
 *.tmp
 *.temp
+
+# Generated or local data artifacts
 data/raw/
 data/interim/
 data/processed/
 *.npz
-notebooks/.ipynb_checkpoints/
