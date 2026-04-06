@@ -39,6 +39,7 @@ Thumbs.db
 *.log
 *.tmp
 *.temp
+~$*
 
 # Generated or local data artifacts
 data/raw/
