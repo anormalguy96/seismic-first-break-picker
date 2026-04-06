@@ -2,6 +2,7 @@
 
 Starter notebooks for interactive work against the existing Halfmile artifacts in this repository.
 
+- `00_hdf5_inspection.ipynb` is for the first raw HDF5 sanity check after downloading the dataset.
 - `01_segment_exploration.ipynb` is for manifest stats, segment previews, and geometry sanity checks.
 - `02_baseline_and_correction_preview.ipynb` runs the saved correction model on one held-out segment and inspects the local patch input.
 - `03_results_review.ipynb` is to review validation candidates, held-out test metrics, and representative figures.
